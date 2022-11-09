@@ -92,7 +92,7 @@ func (adbConnection AdbConnection) safeConnect() (*net.Conn, error) {
 	if err != nil {
 		switch reflect.TypeOf(err) {
 		case reflect.TypeOf(&net.OpError{}):
-			cmd := exec.Command(AdbPath(), "start-server")
+			cmd := exec.Command("adb", "start-server")
 			err = cmd.Start()
 			if err != nil {
 				log.Println("start adb error: ", err.Error())
@@ -434,6 +434,8 @@ func (adb *AdbClient) DeviceList() []AdbDevice {
 			continue
 		}
 		if parts[1] == "device" {
+			res = append(res, AdbDevice{ShellMixin{Client: adb, Serial: parts[0]}})
+		} else if parts[1] == "recovery" {
 			res = append(res, AdbDevice{ShellMixin{Client: adb, Serial: parts[0]}})
 		}
 	}

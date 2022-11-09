@@ -1,10 +1,13 @@
-/**
+/*
+*
 Test localhost Only one Device
-**/
+*
+*/
 package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/xmsociety/adbutils"
 )
@@ -20,7 +23,7 @@ func Shell(arg string) {
 	for _, device := range adb.DeviceList() {
 		fmt.Printf("Now show device: %s, ls: \n", device.Serial)
 		fmt.Printf("Now show device: %s, ls: \n", device.Properties)
-		fmt.Println(device.Shell(arg, false))
+		fmt.Println(device.Shell(arg, false, 2*time.Second))
 	}
 }
 
