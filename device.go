@@ -18,6 +18,7 @@ import (
 type ShellMixin struct {
 	Client      *AdbClient
 	Serial      string
+	State       string
 	TransportID int
 	Properties  map[string]string
 }
