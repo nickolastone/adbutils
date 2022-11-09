@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/xmsociety/adbutils"
+	"github.com/nickolastone/adbutils"
 )
 
 func GetServerVersion() {

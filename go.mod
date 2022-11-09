@@ -1,3 +1,3 @@
-module github.com/xmsociety/adbutils
+module github.com/nickolastone/adbutils
 
 go 1.17

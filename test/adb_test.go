@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/xmsociety/adbutils"
+	"github.com/nickolastone/adbutils"
 )
 
 var adb = adbutils.AdbClient{Host: "localhost", Port: 5037, SocketTime: 10}
