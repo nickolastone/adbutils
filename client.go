@@ -437,6 +437,8 @@ func (adb *AdbClient) DeviceList() []AdbDevice {
 			res = append(res, AdbDevice{ShellMixin{Client: adb, Serial: parts[0], State: parts[1]}})
 		} else if parts[1] == "recovery" {
 			res = append(res, AdbDevice{ShellMixin{Client: adb, Serial: parts[0], State: parts[1]}})
+		} else if parts[1] == "unauthorized" {
+			res = append(res, AdbDevice{ShellMixin{Client: adb, Serial: parts[0], State: parts[1]}})
 		}
 	}
 	return res
